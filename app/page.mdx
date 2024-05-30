@@ -4,6 +4,56 @@ import titleSuffixImage from "../public/title-suffix.png"
 import { Steps } from "@/nextra/steps"
 import { Tree, Folder, File } from "@/nextra/file-tree"
 
+# LaTeX
+
+Detailed information for each option is listed below.
+
+import { OptionTable } from "@/nextra"
+
+## Global
+
+<Tree>
+  <Folder name="users-service" defaultOpen>
+    <File name="schema.graphql" />
+    <Folder name="posts-service" defaultOpen>
+      <File name="schema.graphql" />
+    </Folder>
+  </Folder>
+</Tree>
+
+This is some **bold** and _italics_ text.
+
+This is a list in markdown:
+
+- One
+- Two
+- Three
+
+Checkout my React component:
+
+# Getting Started
+
+```css filename="CSS" word-wrap=false
+html {
+  background: red;
+}
+```
+
+```graphql filename="GraphQL"
+type Character {
+  name: String
+}
+```
+
+```python filename="Python"
+# type Character {
+class Character:
+  # name: String
+  def name(self):
+    return self._name
+```
+
+
 ## Example
 
 <Tree>
@@ -66,54 +116,7 @@ Z --> G;
 ```
 ````
 
-# LaTeX
 
-Detailed information for each option is listed below.
-
-import { OptionTable } from "@/nextra"
-
-## Global
-
-<Tree>
-  <Folder name="users-service" defaultOpen>
-    <File name="schema.graphql" />
-    <Folder name="posts-service" defaultOpen>
-      <File name="schema.graphql" />
-    </Folder>
-  </Folder>
-</Tree>
-
-This is some **bold** and _italics_ text.
-
-This is a list in markdown:
-
-- One
-- Two
-- Three
-
-Checkout my React component:
-
-# Getting Started
-
-```css filename="CSS" word-wrap=false
-html {
-  background: red;
-}
-```
-
-```graphql filename="GraphQL"
-type Character {
-  name: String
-}
-```
-
-```python filename="Python"
-# type Character {
-class Character:
-  # name: String
-  def name(self):
-    return self._name
-```
 
 ```csharp filename="C#"
 // type Character {
