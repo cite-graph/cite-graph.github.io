@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
           <Header />
           <Body>
             {/* <ThemeSwitch className="" /> */}
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>{children}</ThemeProvider>
+            <ThemeProvider attribute="class" defaultTheme="light" enableSystem>{children}</ThemeProvider>
           </Body>
           <Footer />
         </div>
