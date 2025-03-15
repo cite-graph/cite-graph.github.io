@@ -1,4 +1,4 @@
-import styles from "./styles.module.css";
+import styles from "./styles.module.css"
 
 const Loading = ({ color = "#000" }) => {
     return (
@@ -7,7 +7,7 @@ const Loading = ({ color = "#000" }) => {
             <span style={{ backgroundColor: color }} />
             <span style={{ backgroundColor: color }} />
         </span>
-    );
-};
+    )
+}
 
-export default Loading;
+export default Loading

@@ -2,7 +2,7 @@
 
 ## MDX
 
-With Nextra, all your `.mdx` files under the pages directory will be rendered
+With openhuman, all your `.mdx` files under the pages directory will be rendered
 with [MDX](https://mdxjs.com/about), it's an advanced Markdown format with React
 component support.
 
@@ -15,13 +15,13 @@ files like this:
 import { useState } from "react"
 
 export function Counter({ children }) {
-  const [count, setCount] = useState(0)
-  return (
-    <button onClick={() => setCount(count + 1)}>
-      {children}
-      {count}
-    </button>
-  )
+    const [count, setCount] = useState(0)
+    return (
+        <button onClick={() => setCount(count + 1)}>
+            {children}
+            {count}
+        </button>
+    )
 }
 
 <Counter>**Clicks**: </Counter>
@@ -29,13 +29,11 @@ export function Counter({ children }) {
 
 Generates:
 
-
-
 <div className="mt-6 rounded-xl border border-gray-200 p-4 dark:border-gray-900">
     <h2>Hello MDX</h2>
 </div>
 
-Besides basic MDX, Nextra also has some advanced Markdown features built-in.
+Besides basic MDX, openhuman also has some advanced Markdown features built-in.
 
 ## GitHub Flavored Markdown
 
@@ -92,19 +90,19 @@ You can specify custom heading id using the format `## My heading [#custom-id]`.
 For example:
 
 ```md filename="Markdown"
-## Long heading about Nextra [#about-nextra]
+## Long heading about openhuman [#about-openhuman]
 ```
 
-In this example, `#about-nextra` will be used as the heading link, replacing the
-default `#long-heading-about-nextra`.
+In this example, `#about-openhuman` will be used as the heading link, replacing the
+default `#long-heading-about-openhuman`.
 
 ## Extended Syntax Highlighting
 
-import { StarsIcon } from "@/nextra/icons"
-import { Card, Cards } from "@/nextra"
+import { StarsIcon } from "@/icons"
+import { Card, Cards } from "@/mdxui"
 
 Check out the Syntax Highlighting section for more information:
 
 <Cards>
-  <Card icon={<StarsIcon />} title="Syntax Highlighting" href="/docs/guide/syntax-highlighting" />
+    <Card icon={<StarsIcon />} title="Syntax Highlighting" href="/docs/guide/syntax-highlighting" />
 </Cards>

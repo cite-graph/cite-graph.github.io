@@ -1,21 +1,21 @@
-.nextra-cards {
-  grid-template-columns: repeat(auto-fill, minmax(max(250px, calc((100% - 1rem * 2) / var(--rows))), 1fr));
+.openhuman-cards {
+    grid-template-columns: repeat(auto-fill, minmax(max(250px, calc((100% - 1rem * 2) / var(--rows))), 1fr));
 }
 
-.nextra-card {
-  img {
-    @apply select-none;
-  }
+.openhuman-card {
+    img {
+        @apply select-none;
+    }
 
-  svg {
-    @apply w-6 h-auto transition text-black/30 dark:text-white/40;
-  }
+    svg {
+        @apply w-6 h-auto transition text-black/30 dark:text-white/40;
+    }
 
-  &:hover svg {
-    @apply text-current dark:text-current;
-  }
+    &:hover svg {
+        @apply text-current dark:text-current;
+    }
 
-  p {
-    @apply mt-2;
-  }
+    p {
+        @apply mt-2;
+    }
 }

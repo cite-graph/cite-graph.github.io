@@ -4,28 +4,28 @@
     - For each comparison result (e.g., Result 1), update the ratings of the two models involved based on the outcome.
     - The Elo rating update formula is:
 
-      $$
-      R_{ \text{new} } = R_{\text{old}}+K \cdot(S-E)
-      $$
+        $$
+        R_{ \text{new} } = R_{\text{old}}+K \cdot(S-E)
+        $$
 
-      where:
+        where:
 
-      - $R_{\text{new}}$​ is the new rating.
-      - $R_{\text{old}}$ is the old rating.
-      - $K$ is the K-factor, which determines the maximum possible adjustment per comparison.
-      - $S$ is the score: 1 if the model wins, 0 if the model loses, and 0.5 for a draw.
-      - $E$ is the expected score based on the current ratings of the models.
+        - $R_{\text{new}}$​ is the new rating.
+        - $R_{\text{old}}$ is the old rating.
+        - $K$ is the K-factor, which determines the maximum possible adjustment per comparison.
+        - $S$ is the score: 1 if the model wins, 0 if the model loses, and 0.5 for a draw.
+        - $E$ is the expected score based on the current ratings of the models.
 
 3.  **Calculate Expected Score**:
 
     - The expected score $E$ for a model $A$ against a model $B$ is given by:
-      $$
-      E_A=\frac{1}{1+10^{\frac{R_B-R_A}{400}}}
-      $$
-      and similarly,
-      $$
-      E_B=\frac{1}{1+10^{\frac{R_A-R_B}{400}}}
-      $$
+        $$
+        E_A=\frac{1}{1+10^{\frac{R_B-R_A}{400}}}
+        $$
+        and similarly,
+        $$
+        E_B=\frac{1}{1+10^{\frac{R_A-R_B}{400}}}
+        $$
 
 4.  **Update Ratings for Each Comparison**:
 

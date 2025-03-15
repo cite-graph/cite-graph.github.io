@@ -1,38 +1,35 @@
-import { Callout } from "@/nextra/callout"
-import { Steps  } from "@/nextra/steps"
-import {Tree, Folder, File} from "@/nextra/file-tree"
+import { Callout } from "@/mdxui/callout"
+import { Steps } from "@/mdxui/steps"
+import { Tree, Folder, File } from "@/mdxui/file-tree"
 
 # Welcome to my MDX page!
 
-<Callout>
-  If you want to use GraphQL API or libs like Axios, you can create your own fetcher function. Check
-  [here](/docs/data-fetching) for more examples.
-</Callout>
+<Callout>If you want to use GraphQL API or libs like Axios, you can create your own fetcher function. Check [here](/docs/data-fetching) for more examples.</Callout>
 
 <Steps>
-  ### One
-  <Steps>### Two ### Three</Steps>
-  ### Four
-  <Steps>### Five ### Six</Steps>
-  ### Seven
+    ### One
+    <Steps>### Two ### Three</Steps>
+    ### Four
+    <Steps>### Five ### Six</Steps>
+    ### Seven
 </Steps>
 
 <Tree>
-  <Folder name="users-service" defaultOpen>
-    <File name="schema.graphql" />
-  </Folder>
-  <Folder name="posts-service" defaultOpen>
-    <File name="schema.graphql" />
-  </Folder>
+    <Folder name="users-service" defaultOpen>
+        <File name="schema.graphql" />
+    </Folder>
+    <Folder name="posts-service" defaultOpen>
+        <File name="schema.graphql" />
+    </Folder>
 </Tree>
 
 <Tree>
-  <Folder name="users-service" defaultOpen>
-    <File name="schema.graphql" />
-    <Folder name="posts-service" defaultOpen>
-      <File name="schema.graphql" />
+    <Folder name="users-service" defaultOpen>
+        <File name="schema.graphql" />
+        <Folder name="posts-service" defaultOpen>
+            <File name="schema.graphql" />
+        </Folder>
     </Folder>
-  </Folder>
 </Tree>
 
 This is some **bold** and _italics_ text.
@@ -49,13 +46,13 @@ Checkout my React component:
 
 ```css filename="CSS" word-wrap=false
 html {
-  background: red;
+    background: red;
 }
 ```
 
 ```graphql filename="GraphQL"
 type Character {
-  name: String
+    name: String
 }
 ```
 
@@ -123,13 +120,13 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 ```
 
 <details>
-  <summary>Renders properly</summary>
-  <div className="_flex _justify-center">content</div>
+    <summary>Renders properly</summary>
+    <div className="_flex _justify-center">content</div>
 </details>
 
 <details>
-  <summary>Renders on next line</summary>
-  <div className="_flex _justify-center">content</div>
+    <summary>Renders on next line</summary>
+    <div className="_flex _justify-center">content</div>
 </details>
 
 Then you can import `useSWR` and start using it inside any function components:
@@ -138,13 +135,13 @@ Then you can import `useSWR` and start using it inside any function components:
 import useSWR from "swr"
 
 function Profile() {
-  const { data, error } = useSWR("/api/user/123", fetcher)
+    const { data, error } = useSWR("/api/user/123", fetcher)
 
-  if (error) return <div>failed to load</div>
-  if (!data) return <div>loading...</div>
+    if (error) return <div>failed to load</div>
+    if (!data) return <div>loading...</div>
 
-  // render data
-  return <div>hello {data.name}!</div>
+    // render data
+    return <div>hello {data.name}!</div>
 }
 ```
 
@@ -161,13 +158,13 @@ UI. It is incredibly easy to create reusable data hooks on top of SWR:
 
 ```jsx /data/
 function useUser(id) {
-  const { data, error } = useSWR(`/api/user/${id}`, fetcher)
+    const { data, error } = useSWR(`/api/user/${id}`, fetcher)
 
-  return {
-    user: data,
-    isLoading: !error && !data,
-    isError: error,
-  }
+    return {
+        user: data,
+        isLoading: !error && !data,
+        isError: error,
+    }
 }
 ```
 
@@ -175,11 +172,11 @@ And use it in your components:
 
 ```jsx
 function Avatar({ id }) {
-  const { user, isLoading, isError } = useUser(id)
+    const { user, isLoading, isError } = useUser(id)
 
-  if (isLoading) return <Spinner />
-  if (isError) return <Error />
-  return <img src={user.avatar} />
+    if (isLoading) return <Spinner />
+    if (isError) return <Error />
+    return <img src={user.avatar} />
 }
 ```
 
@@ -203,43 +200,43 @@ state for now):
 // page component
 
 function Page() {
-  const [user, setUser] = useState(null)
+    const [user, setUser] = useState(null)
 
-  // fetch data
-  useEffect(() => {
-    fetch("/api/user")
-      .then((res) => res.json())
-      .then((data) => setUser(data))
-  }, [])
+    // fetch data
+    useEffect(() => {
+        fetch("/api/user")
+            .then((res) => res.json())
+            .then((data) => setUser(data))
+    }, [])
 
-  // global loading state
-  if (!user) return <Spinner />
+    // global loading state
+    if (!user) return <Spinner />
 
-  return (
-    <div>
-      <Navbar user={user} />
-      <Content user={user} />
-    </div>
-  )
+    return (
+        <div>
+            <Navbar user={user} />
+            <Content user={user} />
+        </div>
+    )
 }
 
 // child components
 
 function Navbar({ user }) {
-  return (
-    <div>
-      ...
-      <Avatar user={user} />
-    </div>
-  )
+    return (
+        <div>
+            ...
+            <Avatar user={user} />
+        </div>
+    )
 }
 
 function Content({ user }) {
-  return <h1>Welcome back, {user.name}</h1>
+    return <h1>Welcome back, {user.name}</h1>
 }
 
 function Avatar({ user }) {
-  return <img src={user.avatar} alt={user.name} />
+    return <img src={user.avatar} alt={user.name} />
 }
 ```
 
@@ -258,34 +255,34 @@ code can be refactored to:
 ```jsx {20,26}
 // page component
 function Page() {
-  return (
-    <div>
-      <Navbar />
-      <Content />
-    </div>
-  )
+    return (
+        <div>
+            <Navbar />
+            <Content />
+        </div>
+    )
 }
 
 // child components
 function Navbar() {
-  return (
-    <div>
-      ...
-      <Avatar />
-    </div>
-  )
+    return (
+        <div>
+            ...
+            <Avatar />
+        </div>
+    )
 }
 
 function Content() {
-  const { user, isLoading } = useUser()
-  if (isLoading) return <Spinner />
-  return <h1>Welcome back, {user.name}</h1>
+    const { user, isLoading } = useUser()
+    if (isLoading) return <Spinner />
+    return <h1>Welcome back, {user.name}</h1>
 }
 
 function Avatar() {
-  const { user, isLoading } = useUser()
-  if (isLoading) return <Spinner />
-  return <img src={user.avatar} alt={user.name} />
+    const { user, isLoading } = useUser()
+    if (isLoading) return <Spinner />
+    return <img src={user.avatar} alt={user.name} />
 }
 ```
 

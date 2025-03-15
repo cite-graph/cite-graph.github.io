@@ -5,7 +5,7 @@ export const DEFAULTTHEME = {
     // },
     // banner: {
     //     dismissible: true,
-    //     key: 'nextra-banner'
+    //     key: 'openhuman-banner'
     // },
     // chat: {
     //     icon: (
@@ -23,7 +23,7 @@ export const DEFAULTTHEME = {
     //     saturation: 100
     // },
     darkMode: true,
-    direction: 'ltr',
+    direction: "ltr",
     // docsRepositoryBase: 'https://github.com/CiteGraph.github.io/CiteGraph.github.io',
     // editLink: {
     //     component: function EditLink({ className, filePath, children }) {
@@ -54,7 +54,7 @@ export const DEFAULTTHEME = {
     // },
     // footer: {
     //     component: Footer,
-    //     content: `MIT ${new Date().getFullYear()} © Nextra.`
+    //     content: `MIT ${new Date().getFullYear()} © openhuman.`
     // },
     // gitTimestamp: function GitTimestamp({ timestamp }) {
     //     const { locale = DEFAULTLOCALE } = useRouter()
@@ -74,7 +74,7 @@ export const DEFAULTTHEME = {
     // head: function useHead() {
     //     const { frontMatter, title: pageTitle } = useConfig()
 
-    //     const title = `${pageTitle} – Nextra`
+    //     const title = `${pageTitle} – openhuman`
     //     const { description, canonical, image } = frontMatter
     //     return (
     //         <>
@@ -94,7 +94,7 @@ export const DEFAULTTHEME = {
     // i18n: [],
     // logo: (
     //     <>
-    //         <span className="font-extrabold">Nextra</span>
+    //         <span className="font-extrabold">openhuman</span>
     //         <span className="ml-2 max-md:hidden font-normal text-gray-600">
     //             The Next Docs Builder
     //         </span>
