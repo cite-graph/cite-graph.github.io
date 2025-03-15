@@ -50,12 +50,13 @@
     "yaml": "^2.7.0"
   },
   "devDependencies": {
+    "@tailwindcss/oxide":"4.0.14",
     "@eslint/eslintrc": "^3",
     "@shikijs/rehype": "^3.2.1",
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.2.2",
     "prettier": "3.5.3",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4.0.14"
   }
 }
